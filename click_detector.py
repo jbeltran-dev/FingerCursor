@@ -32,7 +32,7 @@ class ClickDetector:
     FRAMES_TO_RELEASE = 3
 
     # ── MediaPipe landmark indices ─────────────────────────────────────────────
-    THUMB_TIP = 3  # Thumb distal joint (where the nail is)
+    THUMB_TIP = 4  # Thumb distal joint (where the nail is)
     INDEX_TIP = 8  # Index fingertip
     WRIST = 0  # Wrist — start of the reference segment
     MIDDLE_MCP = 9  # Middle finger MCP joint — end of the reference segment
