@@ -78,5 +78,14 @@ class HandTracker:
         # Convert normalized coordinates (0–1) to pixel coordinates
         x = int(index_tip.x * width)
         y = int(index_tip.y * height)
-
+        z = index_tip.z
+        print("Deep: ", z)
         return x, y
+
+    def get_full_result(self, opencv_frame):
+        """
+        """
+        rgb_frame = cv2.cvtColor(opencv_frame, cv2.COLOR_BGR2RGB)
+        timestamp_ms = int((time.time() - self.start_time) * 1000)
+        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+        return self.detector.detect_for_video(mp_image, timestamp_ms)
